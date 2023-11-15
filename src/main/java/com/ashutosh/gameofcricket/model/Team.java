@@ -8,5 +8,6 @@ import java.util.List;
 @Getter
 @Setter
 public class Team {
+    private int score;
     private List<Player> playersList;
 }
