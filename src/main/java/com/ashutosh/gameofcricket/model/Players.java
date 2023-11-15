@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Players {
-    String name;
-    PlayerType playerType;
+    private String name;
+    private PlayerType playerType;
 }

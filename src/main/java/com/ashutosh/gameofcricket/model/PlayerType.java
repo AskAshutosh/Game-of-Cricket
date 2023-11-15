@@ -1,6 +1,6 @@
 package com.ashutosh.gameofcricket.model;
 
 public enum PlayerType {
-    BATTER;
+    BATTER,
     BOWLER;
 }
