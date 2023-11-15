@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Players {
+public class Player {
     private String name;
     private PlayerType playerType;
 }

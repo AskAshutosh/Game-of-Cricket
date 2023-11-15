@@ -7,6 +7,6 @@ import java.util.List;
 
 @Getter
 @Setter
-public class Teams {
-    private List<Players> playersList;
+public class Team {
+    private List<Player> playersList;
 }
