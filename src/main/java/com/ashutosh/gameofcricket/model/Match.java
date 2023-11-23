@@ -8,6 +8,8 @@ import lombok.Setter;
 public class Match {
     private Team team1;
     private Team team2;
+    private Scoreboard score1;
+    private Scoreboard score2;
 
     public Match(Team team1, Team team2) {
         this.team1 = team1;
