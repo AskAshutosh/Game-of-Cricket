@@ -7,10 +7,10 @@ import static com.ashutosh.gameofcricket.utils.ScoreUtils.randomScoreGenerator;
 public class MatchController {
     public static final int TOTAL_BALLS_IN_OVER = 6;
     public static final int WICKET_RUN = 7;
-    public static final String MATCH_DRWA_MESSAGE = "It's a draw";
+    public static final String MATCH_DRAW_MESSAGE = "It's a draw";
     private final String team1 = "";
 
-    Match match; private final String team1 = "";
+    Match match;
 
     public static void main(String[] args) {
         MatchController matchController = new MatchController();
@@ -39,7 +39,7 @@ public class MatchController {
             System.out.println("Team B wins");
         }
         else
-            System.out.println(MATCH_DRWA_MESSAGE);
+            System.out.println(MATCH_DRAW_MESSAGE);
     }
 
     private int getInningsScore() {
