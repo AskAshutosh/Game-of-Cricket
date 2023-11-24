@@ -6,4 +6,6 @@ public class MatchInfo {
     List<ScoreInfo> scores;
     List<Innings> innings;
     List<Team> teams;
+
+
 }

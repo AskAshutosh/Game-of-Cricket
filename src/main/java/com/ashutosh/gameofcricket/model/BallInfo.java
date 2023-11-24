@@ -8,5 +8,4 @@ import lombok.Setter;
 public class BallInfo {
     private int run;
     private int ballnumber;
-
 }
