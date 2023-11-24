@@ -8,8 +8,13 @@ import java.util.List;
 @Getter
 @Setter
 public class Team {
-    private List<Player> playersList;
-    private int score;
+    private String id;
+    private String name;
+    private List<String> playerIds;
+    //private List<Player> playersList;
+    private List<Player> extras;
+    private String coachId;
+
 }
 
 //Now make sure each player is defined as BatsMan or Bowler. Modify the random function to returns runs in

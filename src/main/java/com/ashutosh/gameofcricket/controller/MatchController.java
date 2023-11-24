@@ -1,6 +1,6 @@
 package com.ashutosh.gameofcricket.controller;
 
-import com.ashutosh.gameofcricket.model.Match;
+import java.util.Scanner;
 
 import static com.ashutosh.gameofcricket.utils.ScoreUtils.randomScoreGenerator;
 
@@ -10,19 +10,20 @@ public class MatchController {
     public static final String MATCH_DRAW_MESSAGE = "It's a draw";
     private final String team1 = "";
 
-    Match match;
-
     public static void main(String[] args) {
         MatchController matchController = new MatchController();
-        matchController.playMatch();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of overs");
+        int overs = sc.nextInt();
+        matchController.playMatch(overs);
     }
 
-    private void playMatch(){
+    private void playMatch(int overs){
         //first Innings to be played by first team
-        int score1 = getInningsScore();
-        int score2 = getInningsScore();
-        match.getTeam1().setScore(score1);
-        match.getTeam2().setScore(score2);
+        int score1 = getInningsScore(overs);
+        int score2 = getInningsScore(overs);
+//        match.getTeam1().setScore(score1);
+//        match.getTeam2().setScore(score2);
         printTeamScore("team1", score1);
         printTeamScore("team2", score2);
         printMatchResult(score1, score2);
@@ -42,9 +43,9 @@ public class MatchController {
             System.out.println(MATCH_DRAW_MESSAGE);
     }
 
-    private int getInningsScore() {
+    private int getInningsScore(int overs) {
         int score = 0;
-        for (int ballNumber = 0; ballNumber < TOTAL_BALLS_IN_OVER; ballNumber++) {
+        for (int ballNumber = 0; ballNumber < TOTAL_BALLS_IN_OVER*overs; ballNumber++) {
             int runs = randomScoreGenerator();
             if (runs == WICKET_RUN)
                 runs = 0;
@@ -52,4 +53,5 @@ public class MatchController {
         }
         return score;
     }
+
 }

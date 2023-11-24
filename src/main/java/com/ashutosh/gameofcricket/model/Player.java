@@ -6,6 +6,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Player {
+    private String id;
     private String name;
-    private PlayerType playerType;
+    private int age;
+    private PlayerType type;
+    private String country;
+    private boolean isCoach;
 }
