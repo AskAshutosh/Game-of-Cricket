@@ -1,0 +1,3 @@
+TODO: Make separate file for constants
+and separate file for string messages
+filename: Resource file

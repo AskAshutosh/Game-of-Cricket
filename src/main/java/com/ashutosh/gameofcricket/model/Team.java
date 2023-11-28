@@ -1,5 +1,6 @@
 package com.ashutosh.gameofcricket.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,12 +8,13 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Team {
     private String id;
     private String name;
-    private List<String> playerIds;
+    private List<Player> playerList;
     //private List<Player> playersList;
-    private List<Player> extras;
+    private List<Player> extrasList;
     private String coachId;
 
 }

@@ -12,4 +12,5 @@ public class ScoreUtils {
         int maxRange = 7;
         return random.nextInt(maxRange-minRange+1)+minRange;
     }
+
 }
