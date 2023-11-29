@@ -1,165 +1,37 @@
 [
-  [
-    {
-      "id": "IPL001",
-      "name": "Chennai Super Kings",
-      "playerList": [
-        {"id": "IPL100",
-          "name": "M S Dhoni",
-          "age": 41,
-          "type": "WICKETKEEPER",
-          "country": "India",
-          "isCoach": false
-        },
-        {"id": "IPL200",
-          "name": "Ravindra Jadeja",
-          "age": 33,
-          "type": "ALLROUNDER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL300",
-          "name": "Ambati Rayadu",
-          "age": 37,
-          "type": "BATTER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL400",
-          "name": "Ruturaj",
-          "age": 31,
-          "type": "BATTER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL500",
-          "name": "Shivam Dubey",
-          "age": 29,
-          "type": "ALLROUNDER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL600",
-          "name": "Sam Curran",
-          "age": 24,
-          "type": "ALLROUNDER",
-          "country": "England",
-          "isCoach": false
-        },
-        {
-          "id": "IPL700",
-          "name": "Kagiso Rabada",
-          "age": 29,
-          "type": "BOWLER",
-          "country": "South Africa",
-          "isCoach": false
-        },
-        {
-          "id": "IPL800",
-          "name": "Bumrah",
-          "age": 30,
-          "type": "BOWLER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL900",
-          "name": "Arshdeep",
-          "age": 26,
-          "type": "BOWLER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL101",
-          "name": "Ben Stokes",
-          "age": 33,
-          "type": "BOWLER",
-          "country": "England",
-          "isCoach": false
-        },
-        {
-          "id": "IPL102",
-          "name": "AB de Villiers",
-          "age": 37,
-          "type": "BATTER",
-          "country": "South Africa",
-          "isCoach": false
-        }
-      ],
-      "extrasList": [
-        {
-          "id": "IPL103",
-          "name": "Imran Tahir",
-          "age": 37,
-          "type": "BOWLER",
-          "country": "South Africa",
-          "isCoach": false
-        }
-      ],
-      "coachId": "coach1"
-    },
-    {
-      "id": "IPL002",
-      "name": "Mumbai Indians",
-      "playerList": [
-        {
-          "id": "IPL203",
-          "name": "Hardik Pandya",
-          "age": 37,
-          "type": "ALLROUNDER",
-          "country": "India",
-          "isCoach": false
-        },
-        {
-          "id": "IPL204",
-          "name": "Rohit Sharma",
-          "age": 37,
-          "type": "BATTER",
-          "country": "South Africa",
-          "isCoach": false
-        }
-      ],
-      "extrasList": [
-        {"id": "extra3", "name": "Extra Three"},
-        {"id": "extra4", "name": "Extra Four"}
-      ],
-      "coachId": "coach2"
-    },
-    {
-      "id": "IPL003",
-      "name": "Kolkata Knight Riders",
-      "playerList": [
-        {"id": "player6", "name": "Player Six"}
-      ],
-      "extrasList": [
-        {"id": "extra5", "name": "Extra Five"}
-      ],
-      "coachId": "coach3"
-    },
-    {
-      "id": "IPL004",
-      "name": "Sunrisers Hyderbad",
-      "playerList": [],
-      "extrasList": [],
-      "coachId": "coach4"
-    },
-    {
-      "id": "IPL005",
-      "name": "Rajasthan Royals",
-      "playerList": [
-        {"id": "player7", "name": "Player Seven"},
-        {"id": "player8", "name": "Player Eight"}
-      ],
-      "extrasList": [
-        {"id": "extra6", "name": "Extra Six"}
-      ],
-      "coachId": "coach5"
-    }
-  ]
-
+  {
+    "id": "IPL001",
+    "name": "Chennai Super Kings",
+    "playerList":[],
+    "extrasList":[],
+    "coachId": "coach1"
+  },
+  {
+    "id": "IPL002",
+    "name": "Mumbai Indians",
+    "playerList":[],
+    "extrasList":[],
+    "coachId": "coach2"
+  },
+  {
+    "id": "IPL003",
+    "name": "Kolkata Knight Riders",
+    "playerList":[],
+    "extrasList":[],
+    "coachId": "coach3"
+  },
+  {
+    "id": "IPL004",
+    "name": "Sunrisers Hyderbad",
+    "playerList": [],
+    "extrasList": [],
+    "coachId": "coach4"
+  },
+  {
+    "id": "IPL005",
+    "name": "Rajasthan Royals",
+    "playerList": [],
+    "extrasList": [],
+    "coachId": "coach5"
+  }
 ]
