@@ -14,7 +14,7 @@ import java.util.List;
 @Document(collection = "teams")
 public class Team {
     @MongoId
-    private String id;
+    private int id;
     private String name;
     private List<Player> playerList;
     //private List<Player> playersList;

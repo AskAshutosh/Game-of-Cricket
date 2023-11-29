@@ -1,34 +1,34 @@
 [
   {
-    "id": "IPL001",
+    "id": 1,
     "name": "Chennai Super Kings",
     "playerList":[],
     "extrasList":[],
     "coachId": "coach1"
   },
   {
-    "id": "IPL002",
+    "id": 2,
     "name": "Mumbai Indians",
     "playerList":[],
     "extrasList":[],
     "coachId": "coach2"
   },
   {
-    "id": "IPL003",
+    "id": 3,
     "name": "Kolkata Knight Riders",
     "playerList":[],
     "extrasList":[],
     "coachId": "coach3"
   },
   {
-    "id": "IPL004",
+    "id": 4,
     "name": "Sunrisers Hyderbad",
     "playerList": [],
     "extrasList": [],
     "coachId": "coach4"
   },
   {
-    "id": "IPL005",
+    "id": 5,
     "name": "Rajasthan Royals",
     "playerList": [],
     "extrasList": [],

@@ -1,7 +1,7 @@
 package com.ashutosh.gameofcricket.service;
 
 import com.ashutosh.gameofcricket.model.*;
-import com.ashutosh.gameofcricket.repository.ItemRepository;
+import com.ashutosh.gameofcricket.repository.PlayerRepository;
 import com.ashutosh.gameofcricket.resource.StringMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,34 +16,40 @@ import static com.ashutosh.gameofcricket.utils.ScoreUtils.randomScoreGenerator;
 public class MatchService {
 
     @Autowired
-    ItemRepository itemRepository;
+    PlayerRepository playerRepository;
     public static Match createMatch(){
-        Player player1 = new Player("001","MSD", 39, PlayerType.WICKETKEEPER,"India",false);
-        Player player2 = new Player("002", "Jadeja", 33, PlayerType.ALLROUNDER, "India", false);
+        Player player1 = new Player("001","MSD", 39, PlayerType.WICKETKEEPER,"India",false,1);
+        Player player2 = new Player("002", "Jadeja", 33, PlayerType.ALLROUNDER, "India", false,1);
         List<Player> playerList1 = new ArrayList<>();
         playerList1.add(player1);
         playerList1.add(player2);
         List<Player> playerList2 = new ArrayList<>();
-        Player player3 = new Player("003", "Pandya", 30, PlayerType.ALLROUNDER, "India", false);
-        Player player4 = new Player("004", "Rohit",36, PlayerType.BATTER, "India", false);
+        Player player3 = new Player("003", "Pandya", 30, PlayerType.ALLROUNDER, "India", false,2);
+        Player player4 = new Player("004", "Rohit",36, PlayerType.BATTER, "India", false,2);
         playerList2.add(player3);
         playerList2.add(player4);
-        Team teamA = new Team("IPL01","CSK",playerList1,null,"010");
-        Team teamB = new Team("IPL02","MI",playerList2,null,"020");
+        Team teamA = new Team(1,"CSK",playerList1,null,"010");
+        Team teamB = new Team(2,"MI",playerList2,null,"020");
         Innings firstInnings = new Innings(teamA,teamB,1,0);
         Innings secondeInnings = new Innings(teamB,teamA,2,0);
         Match match = new Match(teamA,teamB,firstInnings,secondeInnings);
         return match;
     }
-//    public static void main(String[] args) {
-//        MatchService matchService = new MatchService();
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Enter number of overs");
-//        int overs = sc.nextInt();
-//        int wickets = 0;
-//        Match match = createMatch();
-//        matchService.playMatch(overs,wickets,match);
-//    }
+
+    public List<Player> getAllPlayers(){
+        return playerRepository.findAll();
+    }
+
+
+    public static void main(String[] args) {
+        MatchService matchService = new MatchService();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of overs");
+        int overs = sc.nextInt();
+        int wickets = 0;
+        Match match = createMatch();
+        matchService.playMatch(overs,wickets,match);
+    }
 
     public void playMatch(int overs, int wickets, Match match){
         //first Innings to be played by first team

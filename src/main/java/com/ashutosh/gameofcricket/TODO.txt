@@ -1,3 +1,7 @@
-TODO: Make separate file for constants
+TODO: Make separate file for constants - done
 and separate file for string messages
 filename: Resource file
+
+TODO: Make db connection in the repo layer to fetch data in service
+
+TODO: add team id attribute in player entity

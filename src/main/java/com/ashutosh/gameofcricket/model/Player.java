@@ -18,4 +18,5 @@ public class Player {
     private PlayerType type;
     private String country;
     private boolean isCoach;
+    private int teamId;
 }

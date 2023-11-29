@@ -2,12 +2,12 @@ package com.ashutosh.gameofcricket.controller;
 
 import com.ashutosh.gameofcricket.model.Player;
 
-import com.ashutosh.gameofcricket.repository.ItemRepository;
+import com.ashutosh.gameofcricket.model.Team;
+import com.ashutosh.gameofcricket.repository.PlayerRepository;
+import com.ashutosh.gameofcricket.repository.TeamRepository;
 import com.ashutosh.gameofcricket.service.MatchService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,19 +17,36 @@ public class MatchController {
 
     MatchService matchService;
     @Autowired
-    ItemRepository itemRepository;
+    PlayerRepository playerRepository;
+    @Autowired
+    TeamRepository teamRepository;
     @GetMapping("/players")
     public List<Player> getAllPlayers(){
-        return itemRepository.findAll();
+        return playerRepository.findAll();
     }
 
     @GetMapping("/players/{id}")
     public Optional<Player> findPlayersById(@PathVariable String id){
-        return itemRepository.findById(id);
+        return playerRepository.findById(id);
     }
 
-    @GetMapping("/players/startmatch")
-    public void play(){
+    @GetMapping("/getallteams")
+    public List<Team> getAllTeams(){
+        return teamRepository.findAll();
+    }
 
+    @GetMapping("/teams/{id}")
+    public Optional<Team> getTeamById(@PathVariable Integer id){
+        return teamRepository.findById(id);
+    }
+
+    @PostMapping("/players")
+    public Player addPlayer(@RequestBody Player player){
+        return playerRepository.save(player);
+    }
+
+    @PostMapping("/teams")
+    public Team addTeam(@RequestBody Team team){
+        return teamRepository.save(team);
     }
 }
