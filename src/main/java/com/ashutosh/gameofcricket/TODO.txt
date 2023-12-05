@@ -5,3 +5,5 @@ filename: Resource file
 TODO: Make db connection in the repo layer to fetch data in service
 
 TODO: add team id attribute in player entity
+
+TODO: add playerid list in team object

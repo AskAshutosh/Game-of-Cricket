@@ -16,18 +16,19 @@ public class Team {
     @MongoId
     private int id;
     private String name;
-    private List<Player> playerList;
-    //private List<Player> playersList;
+    //private List<Integer> playerIdList;
+    private List<Player> playersList;
+    //private List<Player> extrasIdList;
     private List<Player> extrasList;
     private String coachId;
 
     @Override
     public String toString() {
         return "Team{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", playerList=" + playerList +
-                ", extrasList=" + extrasList +
+                ", playerIdList=" + playersList +
+                ", extrasIdList=" + extrasList +
                 ", coachId='" + coachId + '\'' +
                 '}';
     }
