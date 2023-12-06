@@ -1,0 +1,246 @@
+Elasticsearch assignment
+
+#Question 1
+
+PUT /product_index_1
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "question_1_analyzer": {
+          "tokenizer": "ngram_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "ngram_tokenizer": {
+          "type": "ngram",
+          "min_gram": 1,
+          "max_gram": 2,
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      }
+    }
+  },
+   "mappings": {
+      "properties": {
+        "price": {
+          "type": "long"
+        },
+        "product_name": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+}
+
+
+#Question  2:
+
+PUT /product_index_2
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "edge_ngram_analyzer": {
+          "tokenizer": "edge_ngram_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "edge_ngram_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 3,
+          "max_gram": 10,
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+      "properties": {
+        "product_name": {
+          "type": "text",
+          "analyzer": "edge_ngram_analyzer"
+        }
+      }
+    }
+}
+
+#Searching products name starting with “Ela”
+
+GET product_index_2/_search
+{
+  "query": {
+    "match": {
+      "product_name": {
+        "query": "Ela"
+      }
+    }
+  }
+}
+
+
+#Question 3
+
+POST product_index/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "product_name": "Elastic Shoes"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "range": {
+            "price": {
+              "gt": 50
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+#Question 4
+
+POST product_index/_search
+{
+  "sort": [
+    {
+      "price": {
+        "order": "desc"
+      }
+    }
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "price": {
+              "gte": 40,
+              "lte": 60
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+
+#Question 5
+
+PUT product_index_5
+{
+  "mappings": {
+      "properties": {
+        "price": {
+          "type": "long"
+        },
+        "product_name": {
+          "fielddata": "true",
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        }
+      }
+    }
+}
+POST products/_search
+{
+  "query": {
+    "match": {
+      "product_name": "headphones"
+    }
+  }
+}
+
+POST product_index_5/_search
+{
+  "sort": [
+    {
+      "product_name": {
+        "order": "asc"
+      }
+    }
+  ],
+  "query": {
+    "match": {
+      "product_name": "headphones"
+    }
+  }
+}
+
+############################
+
+#Question 6
+
+
+PUT product_index_6
+{
+  "mappings": {
+    "properties": {
+      "product_name": {
+        "type": "text",
+        "fields": {
+          "suffix": {
+            "type": "text",
+            "analyzer": "custom_suffix_analyzer"
+          }
+        }
+      }
+    }
+  },
+  "settings": {
+    "analysis": {
+      "tokenizer": {
+        "suffix_tokenizer": {
+          "type": "edge_ngram",
+          "min_gram": 1,
+          "max_gram": 20,
+          "token_chars": [
+            "letter"
+          ]
+        }
+      },
+      "analyzer": {
+        "custom_suffix_analyzer": {
+          "type": "custom",
+          "tokenizer": "suffix_tokenizer"
+        }
+      }
+    }
+  }
+}
+
+GET product_index_6/_search
+{
+  "query": {
+    "match": {
+      "product_name.suffix": "tic"
+    }
+  }
+}
+
